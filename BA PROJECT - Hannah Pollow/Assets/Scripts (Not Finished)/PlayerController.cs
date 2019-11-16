@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsGrounded()
     {
-        //  Debug.DrawRay(transform.position, -transform.up * groundCheckDist, Color.red);
+          Debug.DrawRay(transform.position, -transform.up * groundCheckDist, Color.red);
 
         if (Physics.Raycast(transform.position,-transform.up, groundCheckDist))
         {

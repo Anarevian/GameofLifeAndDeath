@@ -1,0 +1,47 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Video;
+using UnityEngine.SceneManagement;
+
+public class PlayGame : MonoBehaviour
+{
+    [SerializeField] private VideoPlayer video;
+    [SerializeField] private GameObject[] objectsToDeactivate;
+
+    private bool isPlaying;
+
+
+    private void Start()
+    {
+        isPlaying = false;
+    }
+
+    private void Update()
+    {
+        if(video.isPlaying && isPlaying)
+        {
+
+        }
+        else if(!video.isPlaying && isPlaying)
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
+
+    public void Play()
+    {
+        foreach(GameObject x in objectsToDeactivate)
+        {
+            x.SetActive(false);
+        }
+        video.Play();
+        StartCoroutine(Wait());
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.7f);
+        isPlaying = true;
+    }
+}
