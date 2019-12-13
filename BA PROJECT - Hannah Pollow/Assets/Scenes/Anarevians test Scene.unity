@@ -685,7 +685,7 @@ MonoBehaviour:
   walkSpeedMult: 8
   runSpeedMult: 13
   flySpeedMult: 9
-  jumpForceMult: 40
+  jumpForceMult: 20
   gravityMult: 2
   horizAxisName: Horizontal
   vertAxisName: Vertical
@@ -746,7 +746,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   timeBetweenJump: 2
   anim: {fileID: 1897177742}
-  maxJumps: 2
+  maxJumps: 1
   jumpCount: 0
 --- !u!95 &1897177742 stripped
 Animator:
