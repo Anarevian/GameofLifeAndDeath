@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float walkSpeedMult;
-    [SerializeField] private float runSpeedMult;
-    [SerializeField] private float flySpeedMult;
-    [SerializeField] private float jumpForceMult;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float runSpeed;
+    [SerializeField] private float jumpForce;
     [SerializeField] private float gravityMult;
+    [SerializeField] private float dragTime;
+    [SerializeField] private float drag;
+    [SerializeField] private float jumpCD;
 
     [SerializeField] private string horizAxisName;
     [SerializeField] private string vertAxisName;
@@ -27,9 +29,11 @@ public class PlayerController : MonoBehaviour
     public int jumpCount = 0;
     private bool isjumping;
 
+    private Rigidbody rb;
 
     public void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody>();
         groundCheckDist += (GetComponent<Collider>().bounds.extents.y / 2);
     }
 
@@ -46,13 +50,13 @@ public class PlayerController : MonoBehaviour
         switch (Input.GetAxis(sprintAxisName))
         {
             case 1:
-                movVec *= runSpeedMult * Time.deltaTime;
+                movVec *= runSpeed * Time.deltaTime;
                 anim.SetBool("isRunning", true);
                 anim.SetBool("isWalking", false);
                 anim.SetBool("IsIdleing", false);
                 break;
             default:
-                movVec *= walkSpeedMult * Time.deltaTime;
+                movVec *= walkSpeed * Time.deltaTime;
                 anim.SetBool("isRunning", false);
                 anim.SetBool("isWalking", true);
                 anim.SetBool("IsIdleing", false);
@@ -70,7 +74,7 @@ public class PlayerController : MonoBehaviour
         }
 
         gameObject.transform.Translate(movVec);
-        if (Input.GetKeyDown(jumpAxisName) && jumpCount < maxJumps)
+        if (Input.GetKeyDown(jumpAxisName) && jumpCount < maxJumps && isjumping == false)
         {
             anim.SetBool("isFlying", true);
             anim.SetBool("IsIdleing", false);
@@ -95,15 +99,19 @@ public class PlayerController : MonoBehaviour
         isjumping = true;
         float airTime = 0.0f;
         float evaluation = 0.0f;
+        rb.AddForce(Vector3.up * jumpForce,ForceMode.Impulse);
         do
         {
             evaluation = jumpFallof.Evaluate(airTime);
-            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, evaluation * jumpForceMult, 0));
+            rb.AddForce(new Vector3(0, evaluation * jumpForce, 0));
             airTime += Time.deltaTime;
             yield return null;
         }
         while (airTime <= timeBetweenJump);
         isjumping = false;
+        yield return new WaitForSeconds(dragTime);
+        rb.drag = drag;
+        
         yield break;
     }
 
@@ -115,6 +123,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(transform.position, -transform.up, groundCheckDist))
         {
             anim.SetBool("IsGrounded", true);
+            rb.drag = 0.05f;
             if (!isjumping)
             {
                 anim.SetBool("isFlying", false);
