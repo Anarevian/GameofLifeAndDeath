@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private string sprintAxisName;
     [SerializeField] private string flyDownAxisName;
 
-    [SerializeField] private float groundCheckDist;
-
     [SerializeField] private AnimationCurve jumpFallof;
     [SerializeField] private float timeBetweenJump;
 
@@ -28,13 +26,14 @@ public class PlayerController : MonoBehaviour
 
     public int jumpCount = 0;
     private bool isjumping;
+    private bool isGrounded;
 
     private Rigidbody rb;
 
     public void Start()
     {
+        isGrounded = true;
         rb = gameObject.GetComponent<Rigidbody>();
-        groundCheckDist += (GetComponent<Collider>().bounds.extents.y / 2);
     }
 
     public void Update()
@@ -68,7 +67,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("IsIdleing", true);
         }
 
-        if (!IsGrounded())
+        if (!isGrounded)
         {
             movVec += Vector3.down * gravityMult * Time.deltaTime;
         }
@@ -81,7 +80,7 @@ public class PlayerController : MonoBehaviour
             Jump();
             jumpCount++;
         }
-        else if (jumpCount >= maxJumps && IsGrounded())
+        else if (jumpCount >= maxJumps && isGrounded)
         {
             jumpCount = 0;
         }
@@ -116,21 +115,19 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public bool IsGrounded()
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.DrawRay(transform.position, -transform.up * groundCheckDist, Color.red);
-
-        if (Physics.Raycast(transform.position, -transform.up, groundCheckDist))
+        anim.SetBool("IsGrounded", true);
+        rb.drag = 0.05f;
+        if (!isjumping)
         {
-            anim.SetBool("IsGrounded", true);
-            rb.drag = 0.05f;
-            if (!isjumping)
-            {
-                anim.SetBool("isFlying", false);
-            }
-            return true;
+            anim.SetBool("isFlying", false);
         }
+        isGrounded = true;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
         anim.SetBool("IsGrounded", false);
-        return false;
+        isGrounded = false;
     }
 }
