@@ -17,7 +17,7 @@ public class Interaction : MonoBehaviour
     private void FixedUpdate()
     {
         RaycastHit hit;
-        Debug.DrawRay(transform.position, transform.forward * interactionDist);
+        Debug.DrawRay(transform.position, transform.forward * interactionDist, Color.green); 
         if(Physics.Raycast(transform.position, transform.forward, out hit, interactionDist, mask))
         {
             if(Input.GetKeyDown(interactKey))
