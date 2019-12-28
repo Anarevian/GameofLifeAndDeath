@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float camFollow = 8;
     [SerializeField] private float camZoom = 1.75f;
 
-    private float x = 0.0f;
+    public float x = 0.0f;
     private float y = 0.0f;
 
 
@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
     }
 
     private void Update()
-    {
+    {       
         x += Input.GetAxis(mouseXAxisName) * mouseSensitivity;
         y += Input.GetAxis(mouseYAxisName) * mouseSensitivity;
         y = Mathf.Clamp(y, minYAngle, maxYAngle);               

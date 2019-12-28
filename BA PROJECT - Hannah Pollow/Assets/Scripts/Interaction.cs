@@ -7,6 +7,7 @@ public class Interaction : MonoBehaviour
     [SerializeField] private float interactionDist;
     [SerializeField] private KeyCode interactKey;
     [SerializeField] private MultiDimensonalArray[] deadAnimalToAnimal;
+    [SerializeField] private PlayerController playerController;
 
     private LayerMask mask;
     private void Start()
@@ -28,8 +29,10 @@ public class Interaction : MonoBehaviour
 
                     if (deadAnimal == hit.transform.gameObject)
                     {
-                        GameObject.Instantiate(x.Object[1], deadAnimal.transform.position, deadAnimal.transform.rotation, deadAnimal.GetComponentInParent<AudioSource>().transform);
+                        GameObject.Instantiate(x.Object[1], x.Object[2].transform.position, deadAnimal.transform.rotation, deadAnimal.GetComponentInParent<AudioSource>().transform);
                         GameObject.Destroy(deadAnimal);
+                        playerController.MaxJumps++;
+                        break;
                     }
                 }
             }

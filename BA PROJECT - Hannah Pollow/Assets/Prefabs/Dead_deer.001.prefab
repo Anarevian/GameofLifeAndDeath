@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1893764803246024910}
   - component: {fileID: 5192096588584970283}
   - component: {fileID: 3865573214647375818}
+  - component: {fileID: 6397788511867206614}
+  - component: {fileID: 5264844925372603133}
   m_Layer: 0
   m_Name: Dead_deer.001
   m_TagString: Untagged
@@ -26,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5752427141282535172}
-  m_LocalRotation: {x: -0.48226672, y: -0.48226675, z: 0.51712555, w: 0.5171255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -52.157, y: 41.448, z: 72.956}
   m_LocalScale: {x: 36.870953, y: 36.870964, z: 36.870964}
   m_Children: []
@@ -90,6 +92,36 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 3429209641703060959, guid: fffc5f8599ab8df4ebb9e4ecc3dfb244, type: 3}
+--- !u!54 &6397788511867206614
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752427141282535172}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
+--- !u!114 &5264844925372603133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752427141282535172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f281b27da8b440d488d4076f20e23bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpCD: 0.5
+  jumpForce: {x: 0, y: 3, z: 0}

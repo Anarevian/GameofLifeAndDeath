@@ -22,16 +22,23 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float timeBetweenJump;
 
     [SerializeField] private Animator anim;
-    [SerializeField] private int maxJumps;
+    [SerializeField] private GameObject[] feathers;
+    private int maxJumps;
+    public int MaxJumps
+    {
+        get { return maxJumps; }
+        set { maxJumps = value; }
+    }
 
     public int jumpCount = 0;
-    private bool isjumping;
-    private bool isGrounded;
+    public bool isjumping;
+    public bool isGrounded;
 
     private Rigidbody rb;
 
     public void Start()
     {
+        maxJumps = 1;
         isGrounded = true;
         rb = gameObject.GetComponent<Rigidbody>();
     }
@@ -39,6 +46,7 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
         Move();
+        UpdateOverlay();
     }
 
     public void Move()
@@ -73,14 +81,14 @@ public class PlayerController : MonoBehaviour
         }
 
         gameObject.transform.Translate(movVec);
-        if (Input.GetKeyDown(jumpAxisName) && jumpCount < maxJumps && isjumping == false)
+        if (Input.GetKeyDown(jumpAxisName) && jumpCount < maxJumps && !isjumping)
         {
+            jumpCount++;
             anim.SetBool("isFlying", true);
             anim.SetBool("IsIdleing", false);
-            Jump();
-            jumpCount++;
+            Jump();     
         }
-        else if (jumpCount >= maxJumps && isGrounded)
+        else if (isGrounded && !isjumping)
         {
             jumpCount = 0;
         }
@@ -91,6 +99,42 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         StartCoroutine(jumpEvaluation());
+    }
+
+    public void UpdateOverlay()
+    {
+        foreach(GameObject x in feathers)
+        {
+            x.SetActive(false);
+        }
+        switch(maxJumps - jumpCount)
+        {
+            case 1:
+                feathers[0].SetActive(true);
+                break;
+            case 2:
+                feathers[0].SetActive(true);
+                feathers[1].SetActive(true);
+                break;
+            case 3:
+                feathers[0].SetActive(true);
+                feathers[1].SetActive(true);
+                feathers[2].SetActive(true);
+                break;
+            case 4:
+                feathers[0].SetActive(true);
+                feathers[1].SetActive(true);
+                feathers[2].SetActive(true);
+                feathers[3].SetActive(true);
+                break;
+            case 5:
+                feathers[0].SetActive(true);
+                feathers[1].SetActive(true);
+                feathers[2].SetActive(true);
+                feathers[3].SetActive(true);
+                feathers[4].SetActive(true);
+                break;
+        }
     }
 
     private IEnumerator jumpEvaluation()
@@ -130,4 +174,6 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("IsGrounded", false);
         isGrounded = false;
     }
+
+
 }
