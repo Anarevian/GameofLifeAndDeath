@@ -23,12 +23,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject[] feathers;
-    private int maxJumps;
-    public int MaxJumps
-    {
-        get { return maxJumps; }
-        set { maxJumps = value; }
-    }
+    public int MaxJumps;
+    
 
     public int jumpCount = 0;
     public bool isjumping;
@@ -38,7 +34,6 @@ public class PlayerController : MonoBehaviour
 
     public void Start()
     {
-        maxJumps = 1;
         isGrounded = true;
         rb = gameObject.GetComponent<Rigidbody>();
     }
@@ -81,7 +76,7 @@ public class PlayerController : MonoBehaviour
         }
 
         gameObject.transform.Translate(movVec);
-        if (Input.GetKeyDown(jumpAxisName) && jumpCount < maxJumps && !isjumping)
+        if (Input.GetKeyDown(jumpAxisName) && jumpCount < MaxJumps && !isjumping)
         {
             jumpCount++;
             anim.SetBool("isFlying", true);
@@ -107,7 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             x.SetActive(false);
         }
-        switch(maxJumps - jumpCount)
+        switch(MaxJumps - jumpCount)
         {
             case 1:
                 feathers[0].SetActive(true);
