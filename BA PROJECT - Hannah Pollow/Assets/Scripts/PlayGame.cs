@@ -9,6 +9,10 @@ public class PlayGame : MonoBehaviour
     [SerializeField] private VideoPlayer video;
     [SerializeField] private GameObject[] objectsToDeactivate;
 
+    [SerializeField] private string sceneName;
+    [SerializeField] private Color fadecolor;
+    [SerializeField] private float fadespeed;
+
     private bool isPlaying;
 
 
@@ -25,7 +29,7 @@ public class PlayGame : MonoBehaviour
         }
         else if(!video.isPlaying && isPlaying)
         {
-            SceneManager.LoadScene(1);
+            Initiate.Fade(sceneName, fadecolor, fadespeed);
         }
     }
 
