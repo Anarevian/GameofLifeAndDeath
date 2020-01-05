@@ -149,12 +149,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e48f74ee711bd49a5701037d18c45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: []
-  audioSource: {fileID: 0}
-  secondsUntilSceneChange: 0
-  sceneToLoad: 
-  fadeColor: {r: 0, g: 0, b: 0, a: 0}
-  fadeSpeed: 0
+  clip:
+  - {fileID: 8300000, guid: feddafbfd9022c746a9c9006bd810dc1, type: 3}
+  audioSource: {fileID: 832660050}
+  secondsUntilSceneChange: 5
+  sceneToLoad: Level3
+  fadeColor: {r: 1, g: 1, b: 1, a: 0}
+  fadeSpeed: 1.2
 --- !u!4 &12208627
 Transform:
   m_ObjectHideFlags: 0
@@ -506,6 +507,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 89.99999, z: 89.99999}
+--- !u!114 &128860202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2993186128772944829, guid: 22510762f049bd04cab5132c803b2f6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 829975730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a422385b6ba5c4595b69c1b741073e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &172879172
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,9 +590,12 @@ GameObject:
   - component: {fileID: 221514206}
   - component: {fileID: 221514208}
   - component: {fileID: 221514207}
+  - component: {fileID: 221514210}
+  - component: {fileID: 221514209}
+  - component: {fileID: 221514211}
   m_Layer: 0
   m_Name: Krebstier_3 (1)
-  m_TagString: Untagged
+  m_TagString: Krebstier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -644,6 +660,150 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221514205}
   m_Mesh: {fileID: -1550514412580984892, guid: ab202894568b75148a1ebdaca37089b6, type: 3}
+--- !u!54 &221514209
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221514205}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
+--- !u!114 &221514210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221514205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f281b27da8b440d488d4076f20e23bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpCD: 0.5
+  jumpForce: {x: 0, y: 5, z: 0}
+--- !u!64 &221514211
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221514205}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -1550514412580984892, guid: ab202894568b75148a1ebdaca37089b6, type: 3}
+--- !u!1 &257895816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 257895817}
+  - component: {fileID: 257895820}
+  - component: {fileID: 257895819}
+  - component: {fileID: 257895818}
+  m_Layer: 0
+  m_Name: Krebstier Trigger
+  m_TagString: Krebstier
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &257895817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257895816}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 13.676346, y: 22.368, z: 138.80829}
+  m_Children: []
+  m_Father: {fileID: 6357422681999921548}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &257895818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257895816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d591905a3e6a8e4d9ccca393aabd037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Level3
+  fadeColor: {r: 1, g: 1, b: 1, a: 0}
+  fadeSpeed: 1.2
+  timeUntilSceneLoad: 10
+--- !u!23 &257895819
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257895816}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &257895820
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257895816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &297518866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4982167880908524813, guid: e95d8a5968eff744d809edeef9302e0c,
@@ -691,9 +851,12 @@ GameObject:
   - component: {fileID: 422293815}
   - component: {fileID: 422293817}
   - component: {fileID: 422293816}
+  - component: {fileID: 422293819}
+  - component: {fileID: 422293818}
+  - component: {fileID: 422293820}
   m_Layer: 0
   m_Name: Krebstier_2 (1)
-  m_TagString: Untagged
+  m_TagString: Krebstier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -757,6 +920,50 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422293814}
+  m_Mesh: {fileID: -5495902117074765545, guid: ab202894568b75148a1ebdaca37089b6, type: 3}
+--- !u!54 &422293818
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422293814}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
+--- !u!114 &422293819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422293814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f281b27da8b440d488d4076f20e23bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpCD: 0.5
+  jumpForce: {x: 0, y: 5, z: 0}
+--- !u!64 &422293820
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422293814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: ab202894568b75148a1ebdaca37089b6, type: 3}
 --- !u!1 &457877211
 GameObject:
@@ -1932,6 +2139,108 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4637411923612237215, guid: 22510762f049bd04cab5132c803b2f6a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 22510762f049bd04cab5132c803b2f6a, type: 3}
+--- !u!1 &832660044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2993186127623064715, guid: 22510762f049bd04cab5132c803b2f6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 829975730}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &832660050
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832660044}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &978169629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2738,9 +3047,12 @@ GameObject:
   - component: {fileID: 1435756432}
   - component: {fileID: 1435756434}
   - component: {fileID: 1435756433}
+  - component: {fileID: 1435756436}
+  - component: {fileID: 1435756435}
+  - component: {fileID: 1435756437}
   m_Layer: 0
   m_Name: Krebstier_3 (2)
-  m_TagString: Untagged
+  m_TagString: Krebstier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2805,6 +3117,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435756431}
   m_Mesh: {fileID: -1550514412580984892, guid: ab202894568b75148a1ebdaca37089b6, type: 3}
+--- !u!54 &1435756435
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435756431}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
+--- !u!114 &1435756436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435756431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f281b27da8b440d488d4076f20e23bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpCD: 0.5
+  jumpForce: {x: 0, y: 5, z: 0}
+--- !u!64 &1435756437
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435756431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -1550514412580984892, guid: ab202894568b75148a1ebdaca37089b6, type: 3}
 --- !u!1 &1456832021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,9 +3172,12 @@ GameObject:
   - component: {fileID: 1456832022}
   - component: {fileID: 1456832024}
   - component: {fileID: 1456832023}
+  - component: {fileID: 1456832026}
+  - component: {fileID: 1456832025}
+  - component: {fileID: 1456832027}
   m_Layer: 0
   m_Name: Krebstier_2 (2)
-  m_TagString: Untagged
+  m_TagString: Krebstier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2882,6 +3241,50 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456832021}
+  m_Mesh: {fileID: -5495902117074765545, guid: ab202894568b75148a1ebdaca37089b6, type: 3}
+--- !u!54 &1456832025
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456832021}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
+--- !u!114 &1456832026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456832021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f281b27da8b440d488d4076f20e23bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpCD: 0.5
+  jumpForce: {x: 0, y: 5, z: 0}
+--- !u!64 &1456832027
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456832021}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: ab202894568b75148a1ebdaca37089b6, type: 3}
 --- !u!1001 &1582203125
 PrefabInstance:
@@ -3376,9 +3779,9 @@ MonoBehaviour:
   deadAnimalToAnimal:
   - Object:
     - {fileID: 6659404580817345203}
-    - {fileID: 4099843632772195562, guid: 042c8424bce2d4742a7d3e53970d512d, type: 3}
+    - {fileID: 8917806296712787220, guid: 55b67f280a4b9394eb850227ec61af10, type: 3}
     - {fileID: 1368147723}
-  playerController: {fileID: 0}
+  playerController: {fileID: 128860202}
   vm: {fileID: 12208626}
   startValue: 4
   endValue: 5
@@ -4260,13 +4663,60 @@ GameObject:
   - component: {fileID: 8416480213098998242}
   - component: {fileID: 7943503535666393516}
   - component: {fileID: 7146447930877936658}
+  - component: {fileID: 4609772540837144753}
+  - component: {fileID: 4609772540837144752}
+  - component: {fileID: 4609772540837144754}
   m_Layer: 0
   m_Name: Krebstier_2
-  m_TagString: Untagged
+  m_TagString: Krebstier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!54 &4609772540837144752
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609772540837144751}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
+--- !u!114 &4609772540837144753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609772540837144751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f281b27da8b440d488d4076f20e23bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpCD: 0.5
+  jumpForce: {x: 0, y: 5, z: 0}
+--- !u!64 &4609772540837144754
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609772540837144751}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5495902117074765545, guid: ab202894568b75148a1ebdaca37089b6, type: 3}
 --- !u!23 &4897722339435054826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4503,6 +4953,7 @@ Transform:
   - {fileID: 422293815}
   - {fileID: 1456832022}
   - {fileID: 1435756432}
+  - {fileID: 257895817}
   m_Father: {fileID: 0}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4758,6 +5209,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: -5129892607779333026, guid: 042c8424bce2d4742a7d3e53970d512d, type: 3}
     - {fileID: 3631109865961034585, guid: 042c8424bce2d4742a7d3e53970d512d, type: 3}
+    - {fileID: -3242466128154903866, guid: 042c8424bce2d4742a7d3e53970d512d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 042c8424bce2d4742a7d3e53970d512d, type: 3}
 --- !u!33 &7250217565035659872
 MeshFilter:
@@ -4927,6 +5379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6357422681999921548}
+  - component: {fileID: 7953713080222557088}
   m_Layer: 0
   m_Name: Krebstiere
   m_TagString: Untagged
@@ -4934,6 +5387,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!328 &7953713080222557088
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7953713080222557087}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 0}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: _MainTex
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 0
+  m_SkipOnDrop: 0
+  m_Looping: 0
+  m_WaitForFirstFrame: 0
+  m_FrameReadyEventEnabled: 0
 --- !u!4 &8031492505935105756
 Transform:
   m_ObjectHideFlags: 0
@@ -5035,13 +5522,60 @@ GameObject:
   - component: {fileID: 4605907787346313634}
   - component: {fileID: 5931278645810467881}
   - component: {fileID: 4897722339435054826}
+  - component: {fileID: 8856432302292811169}
+  - component: {fileID: 8856432302292811168}
+  - component: {fileID: 8856432302292811170}
   m_Layer: 0
   m_Name: Krebstier_3
-  m_TagString: Untagged
+  m_TagString: Krebstier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!54 &8856432302292811168
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856432302292811167}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
+--- !u!114 &8856432302292811169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856432302292811167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f281b27da8b440d488d4076f20e23bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpCD: 0.5
+  jumpForce: {x: 0, y: 5, z: 0}
+--- !u!64 &8856432302292811170
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856432302292811167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -1550514412580984892, guid: ab202894568b75148a1ebdaca37089b6, type: 3}
 --- !u!4 &9034195104592357172
 Transform:
   m_ObjectHideFlags: 0

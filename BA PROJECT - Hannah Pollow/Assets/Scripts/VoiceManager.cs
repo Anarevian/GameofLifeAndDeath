@@ -43,8 +43,10 @@ public class VoiceManager : MonoBehaviour
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(secondsUntilSceneChange);
-        Initiate.Fade(sceneToLoad, fadeColor, fadeSpeed);
-        yield return null;
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            Initiate.Fade(sceneToLoad, fadeColor, fadeSpeed);
+        }     
     }
 
 
