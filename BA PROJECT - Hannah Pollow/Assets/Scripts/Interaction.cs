@@ -8,6 +8,10 @@ public class Interaction : MonoBehaviour
     [SerializeField] private KeyCode interactKey;
     [SerializeField] private MultiDimensonalArray[] deadAnimalToAnimal;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private VoiceManager vm;
+    [SerializeField] private int startValue;
+    [SerializeField] private int endValue;
+
 
     private LayerMask mask;
     private void Start()
@@ -31,6 +35,16 @@ public class Interaction : MonoBehaviour
                     {
                         GameObject.Instantiate(x.Object[1], x.Object[2].transform.position, deadAnimal.transform.rotation, deadAnimal.GetComponentInParent<AudioSource>().transform);
                         GameObject.Destroy(deadAnimal);
+                        if(playerController.MaxJumps + 1 < endValue)
+                        {
+                            vm.PlayVoiceLine(playerController.MaxJumps - startValue);
+                            Debug.Log("No Scene Change " + playerController.MaxJumps);
+                        }
+                        else if(playerController.MaxJumps + 1 == endValue)
+                        {
+                            vm.PlayVoiceLineAndChangeScene(playerController.MaxJumps - startValue);
+                            Debug.Log("Scene Change");
+                        }
                         playerController.MaxJumps++;
                         break;
                     }

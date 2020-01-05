@@ -528,6 +528,9 @@ MonoBehaviour:
     - {fileID: 1939120260935660946, guid: 39e93630a3fd0554293a08011287c153, type: 3}
     - {fileID: 0}
   playerController: {fileID: 2993186128772944829}
+  vm: {fileID: 0}
+  startValue: 0
+  endValue: 0
 --- !u!1 &3315066765963546083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1073,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  MaxJumps: 0
   jumpCount: 0
   isjumping: 0
   isGrounded: 0
