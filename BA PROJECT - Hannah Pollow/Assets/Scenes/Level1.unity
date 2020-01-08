@@ -5508,7 +5508,7 @@ MonoBehaviour:
   secondsUntilSceneChange: 3
   sceneToLoad: Level2
   fadeColor: {r: 1, g: 1, b: 1, a: 1}
-  fadeSpeed: 0.4
+  fadeSpeed: 0.95
 --- !u!4 &1150806528
 Transform:
   m_ObjectHideFlags: 0
