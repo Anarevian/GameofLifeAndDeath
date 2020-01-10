@@ -12,7 +12,6 @@ public class ActivateShellfish : MonoBehaviour
         shellfishes = new List<GameObject>();
         foreach (MeshRenderer m in GetComponentInParent<AudioSource>().GetComponentInParent<VideoPlayer>().GetComponentsInChildren<MeshRenderer>(true))
         {
-            Debug.Log(m.gameObject.name);
             if(m.gameObject.tag == "Krebstier")
             {
                 shellfishes.Add(m.gameObject);

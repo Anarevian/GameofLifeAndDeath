@@ -31,9 +31,11 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
 
     private Rigidbody rb;
+    private Vector3 gravity;
 
     public void Start()
     {
+        gravity = Physics.gravity;
         isGrounded = true;
         rb = gameObject.GetComponent<Rigidbody>();
     }
@@ -93,6 +95,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
+        Physics.gravity = gravity;
         StartCoroutine(jumpEvaluation());
     }
 
@@ -154,20 +157,29 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider collision)
     {
         anim.SetBool("IsGrounded", true);
         rb.drag = 0.05f;
-        if (!isjumping)
-        {
-            anim.SetBool("isFlying", false);
-        }
+        isGrounded = true;       
+    }
+
+    private void OnTriggerStay(Collider collision)
+    {
+        anim.SetBool("isFlying", false);
+        anim.SetBool("IsGrounded", true);
+        rb.drag = 0.05f;
         isGrounded = true;
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
         anim.SetBool("IsGrounded", false);
         isGrounded = false;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Physics.gravity = gravity * 2;
     }
 
 

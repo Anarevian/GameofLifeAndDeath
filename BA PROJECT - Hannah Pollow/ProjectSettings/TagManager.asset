@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Camera Point
   - Krebstier
+  - Bunny
   layers:
   - Default
   - TransparentFX

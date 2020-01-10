@@ -513,7 +513,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 829975730}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 829975731}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92a422385b6ba5c4595b69c1b741073e, type: 3}
@@ -802,8 +802,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3.6949313, z: 1}
+  m_Center: {x: 0, y: 1.3474654, z: 0}
 --- !u!1 &297518866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4982167880908524813, guid: e95d8a5968eff744d809edeef9302e0c,
@@ -2308,12 +2308,12 @@ PrefabInstance:
     - target: {fileID: 2993186127623064816, guid: 22510762f049bd04cab5132c803b2f6a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0754717
+      value: 0.014388502
       objectReference: {fileID: 0}
     - target: {fileID: 2993186127623064816, guid: 22510762f049bd04cab5132c803b2f6a,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8490566
+      value: 0.971223
       objectReference: {fileID: 0}
     - target: {fileID: 2993186127623064816, guid: 22510762f049bd04cab5132c803b2f6a,
         type: 3}
@@ -2323,6 +2323,26 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4637411923612237215, guid: 22510762f049bd04cab5132c803b2f6a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 22510762f049bd04cab5132c803b2f6a, type: 3}
+--- !u!1 &829975731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6532475635683216870, guid: 22510762f049bd04cab5132c803b2f6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 829975730}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &829975732
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829975731}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 4.2892303
+  m_Height: 19.007336
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.4390051, z: 0.036041196}
 --- !u!1 &832660044 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2993186127623064715, guid: 22510762f049bd04cab5132c803b2f6a,
