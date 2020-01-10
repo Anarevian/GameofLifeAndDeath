@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3865573214647375818}
   - component: {fileID: 6397788511867206614}
   - component: {fileID: 5264844925372603133}
+  - component: {fileID: 4977774601021277128}
   m_Layer: 0
   m_Name: Dead_deer.001
   m_TagString: Untagged
@@ -125,3 +126,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpCD: 0.5
   jumpForce: {x: 0, y: 3, z: 0}
+--- !u!114 &4977774601021277128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752427141282535172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8f83eb48197d847b436687ab60b18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sky: {fileID: 2100000, guid: aa096bf64cf6f8743a3d58859decee2a, type: 2}

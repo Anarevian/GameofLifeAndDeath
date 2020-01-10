@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6151200902197756532}
   - component: {fileID: 5617666171995850210}
   - component: {fileID: -8833764515651015972}
+  - component: {fileID: -1358187737812961953}
   m_Layer: 0
   m_Name: Dead_Rabbit.001 1 1
   m_TagString: Untagged
@@ -125,3 +126,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &-1358187737812961953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8319141719696970054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8f83eb48197d847b436687ab60b18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sky: {fileID: 2100000, guid: 0fd17eba1c1094647803ead2bce7a11c, type: 2}

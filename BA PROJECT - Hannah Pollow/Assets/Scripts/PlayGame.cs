@@ -19,13 +19,14 @@ public class PlayGame : MonoBehaviour
     private void Start()
     {
         isPlaying = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void Update()
     {
-        if(video.isPlaying && isPlaying)
+        if(video.isPlaying && isPlaying && Input.GetKeyDown(KeyCode.Space))
         {
-
+            SceneManager.LoadScene("Level1");
         }
         else if(!video.isPlaying && isPlaying)
         {

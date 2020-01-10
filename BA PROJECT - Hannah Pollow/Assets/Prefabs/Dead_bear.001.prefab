@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8936024849122403021}
   - component: {fileID: 5526282850912213045}
   - component: {fileID: 990875265960069421}
+  - component: {fileID: -6722318440665673066}
   m_Layer: 0
   m_Name: Dead_bear.001
   m_TagString: Untagged
@@ -125,3 +126,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpCD: 0.5
   jumpForce: {x: 0, y: 3, z: 0}
+--- !u!114 &-6722318440665673066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939120260935660946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8f83eb48197d847b436687ab60b18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sky: {fileID: 2100000, guid: d5b74f62c27816e4cbbc3ddc527934db, type: 2}

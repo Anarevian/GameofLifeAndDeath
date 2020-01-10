@@ -31,11 +31,9 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
 
     private Rigidbody rb;
-    private Vector3 gravity;
 
     public void Start()
     {
-        gravity = Physics.gravity;
         isGrounded = true;
         rb = gameObject.GetComponent<Rigidbody>();
     }
@@ -95,7 +93,6 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        Physics.gravity = gravity;
         StartCoroutine(jumpEvaluation());
     }
 
@@ -176,10 +173,6 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetBool("IsGrounded", false);
         isGrounded = false;
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        Physics.gravity = gravity * 2;
     }
 
 
