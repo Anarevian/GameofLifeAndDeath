@@ -717,9 +717,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a428d17840f63e64d840242b3e5a383c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 978106755b0f0b2448e2256e3bb90001, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.737
+  m_Volume: 0.199
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3208,6 +3208,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4982167880908524813, guid: e95d8a5968eff744d809edeef9302e0c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4982167882516003387, guid: e95d8a5968eff744d809edeef9302e0c,
         type: 3}
       propertyPath: m_IsActive
@@ -3219,11 +3224,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4982167881158482024, guid: e95d8a5968eff744d809edeef9302e0c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982167880908524813, guid: e95d8a5968eff744d809edeef9302e0c,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4364,7 +4364,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613292156}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: d2bb0e4eb6de6004ea608838c22ae2c7, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: ea02ccdb499692a4ca50da815e666584, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 184428048}
