@@ -5,6 +5,8 @@ using UnityEngine.Video;
 
 public class Ending : MonoBehaviour
 {
+    [SerializeField] private Buttons pause;
+    [SerializeField] private AudioSource[] source;
     [SerializeField] private VideoPlayer vp;
     private bool levelended;
 
@@ -17,6 +19,11 @@ public class Ending : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            pause.enabled = false;
+            foreach(AudioSource x in source)
+            {
+                x.Stop();
+            }
             vp.Play();
             levelended = true;
         }

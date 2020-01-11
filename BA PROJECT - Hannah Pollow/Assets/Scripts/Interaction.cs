@@ -35,6 +35,7 @@ public class Interaction : MonoBehaviour
                     {
                         GameObject.Instantiate(x.Object[1], x.Object[2].transform.position, deadAnimal.transform.rotation, deadAnimal.GetComponentInParent<AudioSource>().transform);
                         GameObject.Destroy(deadAnimal);
+                        GameObject.Destroy(x.Object[3]);
                         if(playerController.MaxJumps + 1 < endValue)
                         {
                             vm.PlayVoiceLine(playerController.MaxJumps - startValue);

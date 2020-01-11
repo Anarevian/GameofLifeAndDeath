@@ -19,10 +19,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private string flyDownAxisName;
 
     [SerializeField] private AnimationCurve jumpFallof;
-    [SerializeField] private float timeBetweenJump;
+    [SerializeField] private float timeBetweenJump;   
 
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject[] feathers;
+    [SerializeField] private GameObject[] lockedFeathers;
     public int MaxJumps;
     
 
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
 
     private Rigidbody rb;
+    private List<GameObject> z = new List<GameObject>();
 
     public void Start()
     {
@@ -97,7 +99,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void UpdateOverlay()
-    {
+    {       
         foreach(GameObject x in feathers)
         {
             x.SetActive(false);
@@ -134,6 +136,11 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator jumpEvaluation()
     {
+        for(int i = 0; i < MaxJumps; i++)
+        {
+            Debug.Log(lockedFeathers[i].name);
+            lockedFeathers[i].SetActive(true);
+        }
         isjumping = true;
         float airTime = 0.0f;
         float evaluation = 0.0f;
@@ -146,6 +153,10 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
         while (airTime <= timeBetweenJump);
+        for (int i = 0; i < MaxJumps; i++)
+        {
+            lockedFeathers[i].SetActive(false);
+        }
         isjumping = false;
         yield return new WaitForSeconds(dragTime);
         rb.drag = drag;
@@ -157,22 +168,45 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        anim.SetBool("IsGrounded", true);
-        rb.drag = 0.05f;
-        isGrounded = true;       
+        if(collision.tag == "Krebstier")
+        {
+            
+        }
+        else
+        {
+            anim.SetBool("IsGrounded", true);
+            rb.drag = 0.05f;
+            isGrounded = true;
+        }
     }
 
     private void OnTriggerStay(Collider collision)
     {
-        anim.SetBool("isFlying", false);
-        anim.SetBool("IsGrounded", true);
-        rb.drag = 0.05f;
-        isGrounded = true;
+        if (collision.tag == "Krebstier")
+        {
+
+        }
+        else
+        {
+            anim.SetBool("isFlying", false);
+            anim.SetBool("IsGrounded", true);
+            rb.drag = 0.05f;
+            isGrounded = true;
+        }
+
     }
     private void OnTriggerExit(Collider collision)
     {
-        anim.SetBool("IsGrounded", false);
-        isGrounded = false;
+        if (collision.tag == "Krebstier")
+        {
+
+        }
+        else
+        {
+            anim.SetBool("IsGrounded", false);
+            isGrounded = false;
+        }
+
     }
 
 
