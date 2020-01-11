@@ -15,16 +15,21 @@ public class PlayGame : MonoBehaviour
 
     private bool isPlaying;
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+    }
 
     private void Start()
     {
         isPlaying = false;
-        Cursor.lockState = CursorLockMode.Confined;
+
     }
 
     private void Update()
     {
-        if(video.isPlaying && isPlaying && Input.GetKeyDown(KeyCode.Space))
+        if (video.isPlaying && isPlaying && Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene("Level1");
         }
@@ -40,6 +45,8 @@ public class PlayGame : MonoBehaviour
         {
             x.SetActive(false);
         }
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         video.Play();
         StartCoroutine(Wait());
     }

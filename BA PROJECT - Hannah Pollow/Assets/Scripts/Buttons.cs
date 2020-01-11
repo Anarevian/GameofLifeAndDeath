@@ -8,7 +8,7 @@ public class Buttons : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private AudioSource[] source;
 
-    private GameObject player;
+    [SerializeField]private GameObject player;
 
     public void QuitGame()
     {
@@ -21,10 +21,6 @@ public class Buttons : MonoBehaviour
     }
 
 
-    private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -33,6 +29,7 @@ public class Buttons : MonoBehaviour
             pauseMenu.SetActive(!pauseMenu.activeSelf);
             if(pauseMenu.activeSelf)
             {
+                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
                 foreach(AudioSource x in source)
                 {
@@ -46,6 +43,7 @@ public class Buttons : MonoBehaviour
             }
             else
             {
+                Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
                 foreach (AudioSource x in source)
                 {

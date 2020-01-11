@@ -8,6 +8,7 @@ public class Ending : MonoBehaviour
     [SerializeField] private Buttons pause;
     [SerializeField] private AudioSource[] source;
     [SerializeField] private VideoPlayer vp;
+    [SerializeField] private GameObject[] feather;
     private bool levelended;
 
     private void Start()
@@ -24,6 +25,10 @@ public class Ending : MonoBehaviour
             {
                 x.Stop();
             }
+            foreach (GameObject x in feather)
+            {
+                Destroy(x);
+            }
             vp.Play();
             levelended = true;
         }
@@ -33,7 +38,7 @@ public class Ending : MonoBehaviour
     {
         if(!vp.isPlaying && levelended)
         {
-            Initiate.Fade("Credits", Color.black, 0.5f);
+            Initiate.Fade("Credits", Color.black, 1f);
         }
     }
 }

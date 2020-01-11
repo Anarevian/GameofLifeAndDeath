@@ -32,6 +32,8 @@ public class CameraMovement : MonoBehaviour
         cameraPoints[pointsPassed].gameObject.SetActive(true);
         cameraPoints[pointsPassed + 1].gameObject.SetActive(true);
 
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }  
 
     private void Update()
