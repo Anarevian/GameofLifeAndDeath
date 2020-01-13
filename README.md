@@ -7,8 +7,11 @@ A Videogame by Hannah Pollow
 Developed in the Unity3D-Engine for the Bachelorproject 
 
 # Credits: 
+
 Design, Concept, Idea, Modelling: Hannah Pollow 
+
 Programming, Voice of Narrator/Death: Jörg Sroka 
+
 Voice of Life / Child: Viviane Friedländer 
 
 ---- 
@@ -26,4 +29,7 @@ Your Task is to revive dead animals to get back some of your flying power, while
 Developed for 9 Weeks  
 
 -------------------------
+
+Play it on Itch.io: 
+https://hanndragggon.itch.io/game-of-life-and-death 
 
